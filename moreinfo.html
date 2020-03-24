@@ -52,33 +52,9 @@
 
   <script>
 
-  function checkforblank() {
-    console.log('check function');
-    if (document.getElementbyId('fname').value == "") {
-      alert('Please enter your Email Address');
-      document.getElementbyId('fname').style.borderColor = red;
-      return false;
-    }
-  }
-
-function validateEmail(fname) {
-  var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  return re.test(fname);
-}
-
 function validate() {
-  var $result = $("#result");
-  var email = $("#fname").val();
-  $result.text("");
-
-  if (validateEmail(fname)) {
-    $result.text(fname + " is valid :)");
-    $result.css("color", "green");
-  } else {
-    $result.text(fname + " is not valid :(");
-    $result.css("color", "red");
-  }
-  return false;
+  let email = document.getElementById("email").value;
+  email === '' ? window.alert("Please Enter Email Address!") : window.location.href = "/redirect1.html";
 }
 
 $("#validate").on("click", validate);
@@ -104,8 +80,8 @@ $("#validate").on("click", validate);
 					</style>
 					<h2>Get More Information</h2>      
 					<br><br>
-					<form onsubmit="return checkforblank()"><input type="text"  id="fname" name="fname" size="80" placeholder="Please Enter Email Address!" ><br><br><br>.
-					<p><a href = "/redirect1.html" role="button" class="btn btn-primary btn-lg">Yes, I’m interested to receive your CV</a>   &nbsp &nbsp
+					<form><input type="text" id="email" name="email" data-rule="email" size="80" placeholder="Please Enter Email Address!" ><br><br><br>.
+					<p><a onclick="validate()" role="button" class="btn btn-primary btn-lg">Yes, I’m interested to receive your CV</a>   &nbsp &nbsp
 						<a href = "/redirect2.html" role="button" class="btn btn-primary btn-lg">No, I'm not interested. Thank you</a></p>  
 
             </form>

@@ -255,18 +255,14 @@
    play: 5000
  });
 
- function validate() {
+  function validate() {
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let subject = document.getElementById("subject").value;
+    let message = document.getElementById("message").value;
+    name === '' || email === '' || subject === '' || message === '' ? window.alert("Please fill in all fields!") : window.location.href = "/redirect.html";
 
-        let testing = '';
-        let name = document.getElementById("name").value;
-        let email = document.getElementById("email").value;
-        let subject = document.getElementById("subject").value;
-        let message = document.getElementById("message").value;
-        name === '' || email === '' || subject === '' || message === '' ? window.alert("Please fill in all fields!") : window.location.href = "/redirect.html";
-        
-        console.log('final', testing);
-
-      }
+  }
 </script>  
 
 <!--for portfolio jquery--> 
